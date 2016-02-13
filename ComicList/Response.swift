@@ -17,5 +17,50 @@ struct Response {
         return self.status == 1
     }
     
+    /*
+    var result: JSONDictionary? {
+        return payload as? JSONDictionary
+    }
+    
+    var results: [JSONDictionary]? {
+        return payload as? [JSONDictionary]
+    }
+    // */
+    
     private let payload: AnyObject?
 }
+
+extension Response:JSONDecodable {
+    init?(dictionary: JSONDictionary) {
+        guard let status = dictionary["status_code"] as? UInt, message = dictionary["error"] as? String else {
+            return nil
+        }
+        
+        self.status = status
+        self.message = message
+        self.payload = dictionary["results"] //?? []
+    }
+}
+
+extension Response {
+    
+    func result<T: JSONDecodable>()->T? {
+        
+        guard let dictionary = payload as? JSONDictionary else {
+            return nil
+        }
+        
+        return decode(dictionary)
+    }
+    
+    func results<T: JSONDecodable>()->[T]? {
+        
+        guard let dictionaries = payload as? [JSONDictionary] else {
+            return nil
+        }
+        
+        return decode(dictionaries)
+    }
+}
+
+

@@ -12,6 +12,7 @@
 		6D3D5AA61C6F3D0D00B3900D /* ComicVine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AA51C6F3D0D00B3900D /* ComicVine.swift */; };
 		6D3D5AA81C6F4DB400B3900D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AA71C6F4DB400B3900D /* Response.swift */; };
 		6D3D5AAA1C6F510B00B3900D /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AA91C6F510B00B3900D /* JSONDecodable.swift */; };
+		6D3D5AAC1C6F580C00B3900D /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAB1C6F580C00B3900D /* Volume.swift */; };
 		820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */; };
 		820EADF71C402C12002F5F85 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF61C402C12002F5F85 /* TableViewHelpers.swift */; };
 		8223D3E41C2FF19700473005 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8223D3E31C2FF19700473005 /* Colors.txt */; };
@@ -68,6 +69,7 @@
 		6D3D5AA51C6F3D0D00B3900D /* ComicVine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicVine.swift; sourceTree = "<group>"; };
 		6D3D5AA71C6F4DB400B3900D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		6D3D5AA91C6F510B00B3900D /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		6D3D5AAB1C6F580C00B3900D /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewModel.swift; sourceTree = "<group>"; };
 		820EADF61C402C12002F5F85 /* TableViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		8223D3E31C2FF19700473005 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				6D3D5AA21C6F349100B3900D /* Resource.swift */,
 				6D3D5AA91C6F510B00B3900D /* JSONDecodable.swift */,
+				6D3D5AAB1C6F580C00B3900D /* Volume.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				8230C5DF1C1DD7FB002C81D0 /* Colors.swift in Sources */,
 				82920E3B1C6B90D500A8F4D1 /* SearchBarHelpers.swift in Sources */,
 				829137111C43F98400BD459D /* IssueCell.swift in Sources */,
+				6D3D5AAC1C6F580C00B3900D /* Volume.swift in Sources */,
 				829137141C43FB7A00BD459D /* IssueSummary.swift in Sources */,
 				82702F311C438ED000F48280 /* VolumeDetailHeaderView.swift in Sources */,
 				825B653A1C4122750001CC06 /* SearchResultsViewController.swift in Sources */,
