@@ -1,0 +1,35 @@
+PODS:
+  - Kingfisher (1.9.0)
+  - OHHTTPStubs (4.6.0):
+    - OHHTTPStubs/Default (= 4.6.0)
+  - OHHTTPStubs/Core (4.6.0)
+  - OHHTTPStubs/Default (4.6.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (4.6.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (4.6.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (4.6.0)
+  - RxCocoa (2.0.0):
+    - RxSwift (~> 2.0)
+  - RxSwift (2.0.0)
+  - Unbox (1.2.1)
+
+DEPENDENCIES:
+  - Kingfisher (~> 1.9)
+  - OHHTTPStubs (~> 4.6)
+  - RxCocoa (~> 2.0)
+  - RxSwift (~> 2.0)
+  - Unbox (~> 1.2)
+
+SPEC CHECKSUMS:
+  Kingfisher: 163bafc1af6ae14d707e76ecba256d8db99dc955
+  OHHTTPStubs: cb1aefbbeb4de4e741644455d4b945538e5248a2
+  RxCocoa: b0ebd70b4f7450bdb3c8987b122f8fd568dc1e2f
+  RxSwift: d83246efa6f16c50c143bec134649d045498f601
+  Unbox: 919ca70533ff2e281a05265ba7887d2d1d7fe923
+
+COCOAPODS: 0.39.0
