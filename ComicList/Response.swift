@@ -10,7 +10,7 @@ import Foundation
 
 struct Response {
     
-    let status:UInt
+    let status:Int
     let message:String
     
     var succeded: Bool {
@@ -32,7 +32,7 @@ struct Response {
 
 extension Response:JSONDecodable {
     init?(dictionary: JSONDictionary) {
-        guard let status = dictionary["status_code"] as? UInt, message = dictionary["error"] as? String else {
+        guard let status = dictionary["status_code"] as? Int, message = dictionary["error"] as? String else {
             return nil
         }
         

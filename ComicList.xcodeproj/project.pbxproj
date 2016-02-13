@@ -13,6 +13,8 @@
 		6D3D5AA81C6F4DB400B3900D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AA71C6F4DB400B3900D /* Response.swift */; };
 		6D3D5AAA1C6F510B00B3900D /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AA91C6F510B00B3900D /* JSONDecodable.swift */; };
 		6D3D5AAC1C6F580C00B3900D /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAB1C6F580C00B3900D /* Volume.swift */; };
+		6D3D5AAE1C6F790B00B3900D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAD1C6F790B00B3900D /* Session.swift */; };
+		6D3D5AB01C6F885800B3900D /* ComicVineSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */; };
 		820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */; };
 		820EADF71C402C12002F5F85 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF61C402C12002F5F85 /* TableViewHelpers.swift */; };
 		8223D3E41C2FF19700473005 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8223D3E31C2FF19700473005 /* Colors.txt */; };
@@ -70,6 +72,8 @@
 		6D3D5AA71C6F4DB400B3900D /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		6D3D5AA91C6F510B00B3900D /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		6D3D5AAB1C6F580C00B3900D /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		6D3D5AAD1C6F790B00B3900D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicVineSession.swift; sourceTree = "<group>"; };
 		820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewModel.swift; sourceTree = "<group>"; };
 		820EADF61C402C12002F5F85 /* TableViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		8223D3E31C2FF19700473005 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				6D3D5AA21C6F349100B3900D /* Resource.swift */,
 				6D3D5AA91C6F510B00B3900D /* JSONDecodable.swift */,
 				6D3D5AAB1C6F580C00B3900D /* Volume.swift */,
+				6D3D5AAD1C6F790B00B3900D /* Session.swift */,
+				6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -611,6 +617,7 @@
 				82702F311C438ED000F48280 /* VolumeDetailHeaderView.swift in Sources */,
 				825B653A1C4122750001CC06 /* SearchResultsViewController.swift in Sources */,
 				820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */,
+				6D3D5AAE1C6F790B00B3900D /* Session.swift in Sources */,
 				825B65411C413F9B0001CC06 /* SearchResultCell.swift in Sources */,
 				82A240871C353E4A000AD295 /* CollectionViewHelpers.swift in Sources */,
 				82A240891C356C78000AD295 /* VolumeListViewModel.swift in Sources */,
@@ -620,6 +627,7 @@
 				82C4767C1C3FBC0D001BF20D /* VolumeListWireframe.swift in Sources */,
 				6D3D5AA31C6F349100B3900D /* Resource.swift in Sources */,
 				6D3D5AA81C6F4DB400B3900D /* Response.swift in Sources */,
+				6D3D5AB01C6F885800B3900D /* ComicVineSession.swift in Sources */,
 				82702F351C43921800F48280 /* VolumeDetailIssuesView.swift in Sources */,
 				6D3D5AAA1C6F510B00B3900D /* JSONDecodable.swift in Sources */,
 				825B65371C411F8F0001CC06 /* SearchResultsViewModel.swift in Sources */,
