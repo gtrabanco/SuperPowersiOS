@@ -15,6 +15,8 @@
 		6D3D5AAC1C6F580C00B3900D /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAB1C6F580C00B3900D /* Volume.swift */; };
 		6D3D5AAE1C6F790B00B3900D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAD1C6F790B00B3900D /* Session.swift */; };
 		6D3D5AB01C6F885800B3900D /* ComicVineSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */; };
+		6D3D5AB21C6FA27200B3900D /* ManagedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AB11C6FA27200B3900D /* ManagedStore.swift */; };
+		6D3D5AB41C6FA5DF00B3900D /* DirectoryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AB31C6FA5DF00B3900D /* DirectoryHelpers.swift */; };
 		820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */; };
 		820EADF71C402C12002F5F85 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF61C402C12002F5F85 /* TableViewHelpers.swift */; };
 		8223D3E41C2FF19700473005 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8223D3E31C2FF19700473005 /* Colors.txt */; };
@@ -74,6 +76,8 @@
 		6D3D5AAB1C6F580C00B3900D /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		6D3D5AAD1C6F790B00B3900D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicVineSession.swift; sourceTree = "<group>"; };
+		6D3D5AB11C6FA27200B3900D /* ManagedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedStore.swift; sourceTree = "<group>"; };
+		6D3D5AB31C6FA5DF00B3900D /* DirectoryHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryHelpers.swift; sourceTree = "<group>"; };
 		820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewModel.swift; sourceTree = "<group>"; };
 		820EADF61C402C12002F5F85 /* TableViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		8223D3E31C2FF19700473005 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				820EADF61C402C12002F5F85 /* TableViewHelpers.swift */,
 				82343F0E1C41649000BA062B /* SpacerView.swift */,
 				82920E3A1C6B90D500A8F4D1 /* SearchBarHelpers.swift */,
+				6D3D5AB11C6FA27200B3900D /* ManagedStore.swift */,
+				6D3D5AB31C6FA5DF00B3900D /* DirectoryHelpers.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3D5AB41C6FA5DF00B3900D /* DirectoryHelpers.swift in Sources */,
 				82C4768A1C3FF800001BF20D /* SearchSuggestionsViewController.swift in Sources */,
 				822675A91C1DCCD50008297C /* AppDelegate.swift in Sources */,
 				82702F3B1C43BE0300F48280 /* VolumeSummary.swift in Sources */,
@@ -622,6 +629,7 @@
 				82A240871C353E4A000AD295 /* CollectionViewHelpers.swift in Sources */,
 				82A240891C356C78000AD295 /* VolumeListViewModel.swift in Sources */,
 				82702F381C439B0C00F48280 /* SearchResultsWireframe.swift in Sources */,
+				6D3D5AB21C6FA27200B3900D /* ManagedStore.swift in Sources */,
 				8223D3EA1C2FF7E400473005 /* VolumeListItem.swift in Sources */,
 				8223D3F61C307E2900473005 /* VolumeListItemCell.swift in Sources */,
 				82C4767C1C3FBC0D001BF20D /* VolumeListWireframe.swift in Sources */,
