@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let request = ComicVine.VolumeDetail(key: "test", identifier: 42).requestWithBaseURL(NSURL(string: "http://www.example.com")!)
         
         
-        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         customizeAppearance()
