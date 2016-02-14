@@ -17,6 +17,9 @@
 		6D3D5AB01C6F885800B3900D /* ComicVineSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */; };
 		6D3D5AB21C6FA27200B3900D /* ManagedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AB11C6FA27200B3900D /* ManagedStore.swift */; };
 		6D3D5AB41C6FA5DF00B3900D /* DirectoryHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5AB31C6FA5DF00B3900D /* DirectoryHelpers.swift */; };
+		6D5B40EF1C707E0D006EF859 /* ComicList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40ED1C707E0D006EF859 /* ComicList.xcdatamodeld */; };
+		6D5B40F11C708183006EF859 /* ManagedVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40F01C708183006EF859 /* ManagedVolume.swift */; };
+		6D5B40F31C7084F6006EF859 /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40F21C7084F6006EF859 /* ManagedObjectType.swift */; };
 		820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */; };
 		820EADF71C402C12002F5F85 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF61C402C12002F5F85 /* TableViewHelpers.swift */; };
 		8223D3E41C2FF19700473005 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8223D3E31C2FF19700473005 /* Colors.txt */; };
@@ -78,6 +81,9 @@
 		6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicVineSession.swift; sourceTree = "<group>"; };
 		6D3D5AB11C6FA27200B3900D /* ManagedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedStore.swift; sourceTree = "<group>"; };
 		6D3D5AB31C6FA5DF00B3900D /* DirectoryHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryHelpers.swift; sourceTree = "<group>"; };
+		6D5B40EE1C707E0D006EF859 /* ComicList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComicList.xcdatamodel; sourceTree = "<group>"; };
+		6D5B40F01C708183006EF859 /* ManagedVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedVolume.swift; sourceTree = "<group>"; };
+		6D5B40F21C7084F6006EF859 /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
 		820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewModel.swift; sourceTree = "<group>"; };
 		820EADF61C402C12002F5F85 /* TableViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		8223D3E31C2FF19700473005 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				6D3D5AAB1C6F580C00B3900D /* Volume.swift */,
 				6D3D5AAD1C6F790B00B3900D /* Session.swift */,
 				6D3D5AAF1C6F885800B3900D /* ComicVineSession.swift */,
+				6D5B40F21C7084F6006EF859 /* ManagedObjectType.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -179,10 +186,20 @@
 		6D3D5AA41C6F3CFD00B3900D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6D5B40EC1C707DFF006EF859 /* Managed */,
 				6D3D5AA51C6F3D0D00B3900D /* ComicVine.swift */,
 				6D3D5AA71C6F4DB400B3900D /* Response.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6D5B40EC1C707DFF006EF859 /* Managed */ = {
+			isa = PBXGroup;
+			children = (
+				6D5B40ED1C707E0D006EF859 /* ComicList.xcdatamodeld */,
+				6D5B40F01C708183006EF859 /* ManagedVolume.swift */,
+			);
+			name = Managed;
 			sourceTree = "<group>";
 		};
 		820EADF01C4017DD002F5F85 /* View Models */ = {
@@ -621,6 +638,7 @@
 				829137111C43F98400BD459D /* IssueCell.swift in Sources */,
 				6D3D5AAC1C6F580C00B3900D /* Volume.swift in Sources */,
 				829137141C43FB7A00BD459D /* IssueSummary.swift in Sources */,
+				6D5B40F11C708183006EF859 /* ManagedVolume.swift in Sources */,
 				82702F311C438ED000F48280 /* VolumeDetailHeaderView.swift in Sources */,
 				825B653A1C4122750001CC06 /* SearchResultsViewController.swift in Sources */,
 				820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */,
@@ -640,9 +658,11 @@
 				6D3D5AAA1C6F510B00B3900D /* JSONDecodable.swift in Sources */,
 				825B65371C411F8F0001CC06 /* SearchResultsViewModel.swift in Sources */,
 				82A74EB21C417833001CF7CF /* VolumeDetailViewController.swift in Sources */,
+				6D5B40EF1C707E0D006EF859 /* ComicList.xcdatamodeld in Sources */,
 				820EADF71C402C12002F5F85 /* TableViewHelpers.swift in Sources */,
 				6D3D5AA61C6F3D0D00B3900D /* ComicVine.swift in Sources */,
 				82343F0F1C41649000BA062B /* SpacerView.swift in Sources */,
+				6D5B40F31C7084F6006EF859 /* ManagedObjectType.swift in Sources */,
 				8291370A1C43E6AC00BD459D /* VolumeDetailViewModel.swift in Sources */,
 				82702F331C43917400F48280 /* VolumeDetailDescriptionView.swift in Sources */,
 				8223D3F11C3065F800473005 /* VolumeListViewController.swift in Sources */,
@@ -841,6 +861,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6D5B40ED1C707E0D006EF859 /* ComicList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6D5B40EE1C707E0D006EF859 /* ComicList.xcdatamodel */,
+			);
+			currentVersion = 6D5B40EE1C707E0D006EF859 /* ComicList.xcdatamodel */;
+			path = ComicList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8226759D1C1DCCD50008297C /* Project object */;
 }
