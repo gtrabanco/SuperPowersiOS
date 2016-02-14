@@ -46,3 +46,19 @@ extension ManagedVolume: ManagedObjectType {
         return [NSSortDescriptor(key: "insertionDate", ascending: true)]
     }
 }
+
+
+extension ManagedVolume: ManagedJSONDecodable {
+    
+    func updateWithJSONDictionary(dictionary: JSONDictionary) {
+        guard let id = dictionary["id"] as? Int, title = dictionary["name"] as? String else {
+            return //This should be a throw
+        }
+        
+        self.identifier = id
+        self.title = title
+        self.publisher = (dictionary as NSDictionary).valueForKeyPath("publisher.name") as? String
+        self.imageURLString = (dictionary as NSDictionary).valueForKeyPath("image.small_url") as? String
+        
+    }
+}
