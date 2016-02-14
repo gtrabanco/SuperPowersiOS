@@ -30,6 +30,10 @@ extension Session {
             return results
         }
     }
+    
+    func volumeDetail(identifier: Int) -> Observable<Volume> {
+        return object(ComicVine.VolumeDetail(key: comicVineKey, identifier: identifier))
+    }
 }
 
 extension Session {

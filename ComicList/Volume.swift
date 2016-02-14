@@ -10,6 +10,7 @@ import Foundation
 
 struct Volume {
     let title: String
+    let description: String?
 }
 
 extension Volume:JSONDecodable {
@@ -19,5 +20,6 @@ extension Volume:JSONDecodable {
         }
         
         self.title = title
+        self.description = dictionary["description"] as? String
     }
 }

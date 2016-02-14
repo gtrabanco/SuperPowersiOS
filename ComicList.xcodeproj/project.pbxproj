@@ -20,6 +20,7 @@
 		6D5B40EF1C707E0D006EF859 /* ComicList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40ED1C707E0D006EF859 /* ComicList.xcdatamodeld */; };
 		6D5B40F11C708183006EF859 /* ManagedVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40F01C708183006EF859 /* ManagedVolume.swift */; };
 		6D5B40F31C7084F6006EF859 /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40F21C7084F6006EF859 /* ManagedObjectType.swift */; };
+		6D5B40F51C70C864006EF859 /* VolumeListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B40F41C70C864006EF859 /* VolumeListStore.swift */; };
 		820EADF41C401824002F5F85 /* SearchSuggestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */; };
 		820EADF71C402C12002F5F85 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EADF61C402C12002F5F85 /* TableViewHelpers.swift */; };
 		8223D3E41C2FF19700473005 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8223D3E31C2FF19700473005 /* Colors.txt */; };
@@ -84,6 +85,7 @@
 		6D5B40EE1C707E0D006EF859 /* ComicList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComicList.xcdatamodel; sourceTree = "<group>"; };
 		6D5B40F01C708183006EF859 /* ManagedVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedVolume.swift; sourceTree = "<group>"; };
 		6D5B40F21C7084F6006EF859 /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
+		6D5B40F41C70C864006EF859 /* VolumeListStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeListStore.swift; sourceTree = "<group>"; };
 		820EADF31C401824002F5F85 /* SearchSuggestionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsViewModel.swift; sourceTree = "<group>"; };
 		820EADF61C402C12002F5F85 /* TableViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		8223D3E31C2FF19700473005 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				8230C5DD1C1DD7DC002C81D0 /* Helpers */,
 				8230C5DC1C1DD7CA002C81D0 /* Resources */,
 				822675A81C1DCCD50008297C /* AppDelegate.swift */,
+				6D5B40F41C70C864006EF859 /* VolumeListStore.swift */,
 				822675B61C1DCCD50008297C /* Info.plist */,
 			);
 			name = Common;
@@ -649,6 +652,7 @@
 				82702F381C439B0C00F48280 /* SearchResultsWireframe.swift in Sources */,
 				6D3D5AB21C6FA27200B3900D /* ManagedStore.swift in Sources */,
 				8223D3EA1C2FF7E400473005 /* VolumeListItem.swift in Sources */,
+				6D5B40F51C70C864006EF859 /* VolumeListStore.swift in Sources */,
 				8223D3F61C307E2900473005 /* VolumeListItemCell.swift in Sources */,
 				82C4767C1C3FBC0D001BF20D /* VolumeListWireframe.swift in Sources */,
 				6D3D5AA31C6F349100B3900D /* Resource.swift in Sources */,

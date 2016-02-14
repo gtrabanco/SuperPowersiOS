@@ -35,6 +35,16 @@ final class ManagedVolume: NSManagedObject {
     }
 }
 
+extension ManagedVolume {
+    static func fetchRequestForVolume(identifier: Int) -> NSFetchRequest {
+        
+        let fetchRq = NSFetchRequest(entityName: self.entityName)
+        fetchRq.predicate = NSPredicate(format: "identifier == %d", identifier)
+        fetchRq.fetchLimit = 1
+        
+        return fetchRq
+    }
+}
 
 extension ManagedVolume: ManagedObjectType {
     

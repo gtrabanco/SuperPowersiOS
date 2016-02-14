@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
 
 class VolumeDetailHeaderView: UIStackView {
     
@@ -28,6 +29,30 @@ class VolumeDetailHeaderView: UIStackView {
     @IBOutlet private weak var publisherLabel: UILabel! {
         didSet {
             publisherLabel.textColor = UIColor(named: .LightText)
+        }
+    }
+    
+    @IBAction private func didTapActionButton(sender: UIButton) {
+        self.actionHandler()
+    }
+    
+    var actionHandler: () -> () = {}
+    
+    /// Bindable sink for the button title
+    var buttonTitle: AnyObserver<String> {
+        return AnyObserver {
+            [weak self] event in
+            
+            MainScheduler.ensureExecutingOnScheduler() // Make sure we are in main thread
+            
+            switch event {
+                case let .Next(value):
+                    self?.actionButton.setTitle(value, forState: .Normal)
+                case let .Error(error):
+                    fatalError("Binding error \(error)")
+                case .Completed:
+                    break
+            }
         }
     }
     

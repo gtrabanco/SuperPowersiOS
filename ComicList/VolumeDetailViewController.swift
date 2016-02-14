@@ -57,6 +57,12 @@ class VolumeDetailViewController: UIViewController {
     private func setupBindings() {
         
         headerView.summary = viewModel.summary
+        headerView.actionHandler = viewModel.addOrRemove
+        
+        
+        viewModel.buttonTitle
+            .bindTo(headerView.buttonTitle)
+            .addDisposableTo(self.disposeBag)
         
         viewModel.description
             .bindTo(descriptionView.descriptionLabel.rx_text)

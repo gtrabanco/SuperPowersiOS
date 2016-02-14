@@ -11,8 +11,8 @@ import Foundation
 enum ComicVine {
     case Suggestions(key: String, query: String)
     case Search(key: String, query: String, page: UInt)
-    case VolumeDetail(key: String, identifier: UInt)
-    // case Issues(key:String, indentifier: UInt)
+    case VolumeDetail(key: String, identifier: Int)
+    //case Issues(key:String, indentifier: UInt)
 }
 
 extension ComicVine:Resource {

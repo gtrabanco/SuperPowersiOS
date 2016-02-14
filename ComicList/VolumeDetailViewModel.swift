@@ -11,6 +11,9 @@ import RxSwift
 
 protocol VolumeDetailViewModelType: class {
     
+    /// The button title depends on the volume status
+    var buttonTitle: Observable<String> { get }
+    
     /// The volume summary
     var summary: VolumeSummary { get }
     
@@ -19,6 +22,9 @@ protocol VolumeDetailViewModelType: class {
     
     /// The issues for this volume
     var issues: Observable<[IssueSummary]> { get }
+    
+    /// Adds or removes the volume
+    func addOrRemove()
 }
 
 final class VolumeDetailViewModel: VolumeDetailViewModelType {
@@ -27,9 +33,54 @@ final class VolumeDetailViewModel: VolumeDetailViewModelType {
     
     init(summary: VolumeSummary) {
         self.summary = summary
+        self.owned = Variable(self.store.containsVolume(summary.identifier))
     }
     
-    private(set) lazy var description: Observable<String> = Observable.just("Lorem fistrum está la cosa muy malar va usté muy cargadoo apetecan diodeno. Fistro quietooor condemor no puedor amatomaa apetecan ahorarr no puedor por la gloria de mi madre sexuarl.")
+    func addOrRemove() {
+        do {
+            if self.owned.value {
+                try self.store.removeVolume(self.summary.identifier)
+            } else {
+                try self.store.addVolume(self.summary)
+            }
+            
+            owned.value = !owned.value
+        } catch let error {
+            print("Error adding or removing value \(error)")
+        }
+    }
+    
+    var buttonTitle: Observable<String> {
+        return self.owned.asObservable().map { $0 ? "Remove" : "Add" }
+    }
+    
+    private let session = Session.comicVineSession()
+    private let store = VolumeListStore.sharedStore
+    private let owned: Variable<Bool>
+    
+    private(set) lazy var description: Observable<String> = self.session.volumeDetail(self.summary.identifier)
+        .map { $0.description ?? "" }
+        .catchErrorJustReturn("")
+        .startWith("")
+        //Make sure the description is delivered in the main thread
+        .observeOn(MainScheduler.instance)
+        //Strip out the html
+        .map { description in
+            let data = description.dataUsingEncoding(NSUTF8StringEncoding)
+            let options: [String:AnyObject] = [
+                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+            ]
+            
+            let attributedText = try NSMutableAttributedString(
+                data: data!,
+                options: options,
+                documentAttributes:  nil)
+            
+            
+            return attributedText.string
+        }
+        .shareReplay(1)
     
     private(set) lazy var issues: Observable<[IssueSummary]> = Observable.just(
         [
