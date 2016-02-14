@@ -17,6 +17,19 @@ extension Session {
     func suggestedVolumes(query: String) -> Observable<[Volume]> {
         return self.objects(ComicVine.Suggestions(key: comicVineKey, query: query))
     }
+    
+    func searchVolumes(query: String, page: UInt) -> Observable<[JSONDictionary]> {
+        
+        return self.response(ComicVine.Search(key: comicVineKey, query: query, page: page)).map {
+            response in
+            
+            guard let results = response.payload as? [JSONDictionary] else {
+                throw SessionError.CouldNotDecodeJSON
+            }
+            
+            return results
+        }
+    }
 }
 
 extension Session {

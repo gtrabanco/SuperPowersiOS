@@ -53,4 +53,3 @@ func decode <T:NSManagedObject where T:ManagedObjectType, T: ManagedJSONDecodabl
     return objects
 }
 
-

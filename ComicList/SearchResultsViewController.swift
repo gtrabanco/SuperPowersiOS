@@ -43,6 +43,7 @@ class SearchResultsViewController: UITableViewController {
         
         setupView()
         setupBindings()
+        nextPage()
     }
 
     // MARK: - UITableViewDataSource
@@ -62,6 +63,10 @@ class SearchResultsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
+        
+        if indexPath.row == self.viewModel.numberOfResults - 3 {
+            self.nextPage()
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -79,5 +84,11 @@ class SearchResultsViewController: UITableViewController {
     
     private func setupBindings() {
         viewModel.didUpdateResults = tableView.reloadData
+    }
+    
+    private func nextPage() {
+        self.viewModel.nextPage().subscribeNext {
+            _ in
+        }.addDisposableTo(self.disposeBag)
     }
 }

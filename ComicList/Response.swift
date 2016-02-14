@@ -27,7 +27,8 @@ struct Response {
     }
     // */
     
-    private let payload: AnyObject?
+    //private let payload: AnyObject?
+    internal let payload: AnyObject?
 }
 
 extension Response:JSONDecodable {

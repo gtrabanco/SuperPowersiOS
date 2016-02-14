@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 protocol SearchResultsViewModelType: class {
     
@@ -30,38 +31,131 @@ protocol SearchResultsViewModelType: class {
     func nextPage() -> Observable<Void>
 }
 
-final class SearchResultsViewModel: SearchResultsViewModelType {
+final class SearchResultsViewModel: NSObject {
+    
+    //MARK: - Properties
     
     let query: String
     
     var didUpdateResults: () -> () = {}
     
-    var numberOfResults: Int {
-        // TODO: implement
-        return 25
-    }
+    private let session = Session.comicVineSession()
+    private var currentPage: UInt = 1
+    
+    private let store: ManagedStore
+    private let writeContext: NSManagedObjectContext
+    private let readContext: NSManagedObjectContext
+    private let fetchResultsController: NSFetchedResultsController
+    
+    private var notificationObserver: NSObjectProtocol!
+    
+    //MARK: - Initialization
     
     init(query: String) {
         self.query = query
+        self.store = try! ManagedStore.temporaryStore()
+        self.writeContext = self.store.contextWithConcurrencyType(.PrivateQueueConcurrencyType)
+        self.readContext = self.store.contextWithConcurrencyType(.MainQueueConcurrencyType)
+        
+        self.fetchResultsController = NSFetchedResultsController(
+            fetchRequest: ManagedVolume.defaultFetchRequest,
+            managedObjectContext: self.readContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        
+        super.init()
+        
+        self.fetchResultsController.delegate = self
+        try! self.fetchResultsController.performFetch()
+        
+        self.notificationObserver = NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification,
+            object: self.writeContext,
+            queue: nil) {
+                notification in
+                
+                self.readContext.performBlock {
+                    self.readContext.mergeChangesFromContextDidSaveNotification(notification)
+                }
+        }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self.notificationObserver)
+    }
+    
+    
+    private subscript(position: Int) -> ManagedVolume {
+        assert(position < numberOfResults, "Position out of range")
+        
+        
+        let indexPath = NSIndexPath(forRow: position, inSection: 0)
+        
+        guard let volume = self.fetchResultsController.objectAtIndexPath(indexPath) as? ManagedVolume else {
+            fatalError("The result can not be converted to ManagedVolume at position \(position)")
+        }
+        
+        return volume
+    }
+}
+
+//MARK: - SearchResultsViewModelType
+extension SearchResultsViewModel: SearchResultsViewModelType {
+    
+    var numberOfResults: Int {
+        return self.fetchResultsController.sections?.first?.numberOfObjects ?? 0
     }
     
     subscript(position: Int) -> SearchResult {
-        assert(position < numberOfResults, "Position out of range")
         
-        // TODO: implement
-        return SearchResult(imageURL: NSURL(string: "http://static.comicvine.com/uploads/scale_small/3/38919/1251093-thanos_imperative_1.jpg"), title: "Some title \(position)", publisherName: "Some publisher")
+        let volume: ManagedVolume = self[position]
+        
+        return SearchResult(
+            imageURL: volume.imageURL,
+            title: volume.title,
+            publisherName:  volume.publisher
+        )
     }
     
     subscript(position: Int) -> VolumeSummary {
-        assert(position < numberOfResults, "Position out of range")
+        let volume: ManagedVolume = self[position]
         
-        // TODO: implement
-        return VolumeSummary(identifier: 0, title: "Some title \(position)", imageURL: NSURL(string: "http://static.comicvine.com/uploads/scale_small/3/38919/1251093-thanos_imperative_1.jpg"), publisherName: "Some publisher")
+        return VolumeSummary(
+            identifier: volume.identifier,
+            title:  volume.title,
+            imageURL: volume.imageURL,
+            publisherName: volume.publisher
+        )
     }
     
     func nextPage() -> Observable<Void> {
         
-        /// TODO: implement
-        return Observable.just(())
+        let context = self.writeContext
+        
+        return self.session.searchVolumes(self.query, page: self.currentPage++)
+            .doOn(
+                onNext: {
+                    dictionaries in
+                    let _: [ManagedVolume] = decode(dictionaries, insertIntoContext: context)
+                    context.performBlockAndWait {
+                        do {
+                            try context.save()
+                        } catch {
+                            print("Could not save search results")
+                            context.rollback()
+                        }
+                    }
+                })
+            .map {_ in  ()} //Convert to void
+        .observeOn(MainScheduler.instance)
+        .shareReplay(1)
     }
 }
+
+//MARK: - NSFetchedResultsControllerDelegate
+extension SearchResultsViewModel: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        didUpdateResults()
+    }
+}
+
